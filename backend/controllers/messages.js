@@ -55,6 +55,7 @@ const createMessage = async (req, res) => {
   const newMessage = new Message({
     userid: req.body.userid,
     senderid: req.body.senderid,
+    sendername: req.body.sendername,
     message: req.body.message,
   })
   try {
