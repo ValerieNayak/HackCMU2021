@@ -15,7 +15,7 @@ const getAllUsers = async (req, res) => {
 }
 
 const getUser = async (req, res) => {
-  const _id = req.body._id;
+  const _id = req.params._id;
   try {
     const user = await User.findOne({_id: _id});
     res.status(200).json(user);
@@ -25,7 +25,7 @@ const getUser = async (req, res) => {
 }
 
 const searchUsers = async (req, res) => {
-  const username = req.body.username;
+  const username = req.params.username;
   // try {
   //   const users = await User.aggregate
   // }

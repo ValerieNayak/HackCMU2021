@@ -15,9 +15,10 @@ const getAllMessages = async (req, res) => {
 }
 
 const getUserMessages = async (req, res) => {
+  const userid = req.params.userid;
   try {
     const messages = await Message.aggregate([
-      {$match: {userid: req.params.userid}}
+      {$match: {userid: userid}}
     ])
     res.status(200).json(messages);
   } catch(error) {
@@ -36,11 +37,10 @@ const getMessage = async (req, res) => {
 }
 
 const getRandomMessage = async (req, res) => {
-  // const count = Message.estimatedDocumentCount();
-  // var random = Math.floor(Math.random() * count);
+  const userid = req.params.userid;
   try {
     const msg = await Message.aggregate([
-      {$match: {username: req.params.username}},
+      {$match: {userid: userid}},
       {$sample: {size:1}}
     ])
     res.status(200).json(msg);
