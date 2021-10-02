@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     margin: 20,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
   },
 
   messageText: {

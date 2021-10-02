@@ -4,23 +4,29 @@ import styles from './styles';
 
 function ReadFromVault({user}) {
   const [message, updateMessage] = useState('');
-  const [senderName, updateSenderName] = useState('');
+  const [senderName, updateSenderName] = useState('TEst sender');
 
-  function getSenderName(senderId) {
+  async function getSenderName(senderId) {
     const sender = fetch('http://localhost:9000/users/id/' + 'senderId')
       .then(response => response.json)
-      .then(json => updateSenderName(json.username));
+      .catch(error => console.error(error));
+    if (sender == null) {
+      return null;
+    }
+    updateSenderName(sender.username);
     return sender.username;
   }
 
-  function getRandomMessage() {
+  async function getRandomMessage() {
     const uid = '6157efde4405bc624b27aea0';
     fetch('http://localhost:9000/messages/random/' + uid)
       .then(response => response.json())
       .then(json => {
         console.log(json);
         updateMessage(json.message);
+        updateSenderName(json.sendername);
       })
+      // .then(senderid => getSenderName(senderid))
       .catch(error => console.error(error));
   }
 
@@ -35,6 +41,7 @@ function ReadFromVault({user}) {
       </TouchableOpacity>
       <View style={styles.messageBox}>
         <Text style={styles.messageText}>{message}</Text>
+        <Text>From {senderName}</Text>
       </View>
     </View>
   );

@@ -24,40 +24,17 @@ import Colors from './constants/Colors';
 
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
-// import MainStack from './navigation/MainStack';
+import MainStack from './navigation/MainStack';
 
 const App: () => Node = () => {
   // const isDarkMode = useColorScheme() === 'dark';
   const [user, updateUser] = useState({});
 
   return (
-    <NavigationContainer>
-      <SafeAreaView style={{backgroundColor: Colors.lightYellow}}>
-        <HomeScreen updateUser={updateUser} />
-        {/* <LoginScreen updateUser={updateUser} /> */}
-        {/* <MainStack /> */}
-      </SafeAreaView>
-    </NavigationContainer>
+    <SafeAreaView style={{flex: 1, backgroundColor: Colors.lightYellow}}>
+      <MainStack user={user} updateUser={updateUser} />
+    </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;

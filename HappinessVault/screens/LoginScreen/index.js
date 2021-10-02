@@ -1,10 +1,12 @@
 import React, {useState, useContext} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import styles from './styles';
-// import UserContext from '../../contexts/UserContext';
+import {StackActions, CommonActions} from '@react-navigation/native';
 
-function LoginScreen({updateUser}) {
+function LoginScreen({navigation, route}) {
   const [name, setName] = useState('');
+  // const {user, updateUser} = route;
+  console.log('route: \n', route);
 
   async function createUser(name) {
     // this function will create a new user in the database, return id
@@ -30,6 +32,12 @@ function LoginScreen({updateUser}) {
   async function submitName() {
     console.log('submitting', name);
     await createUser(name);
+    navigation.dispatch(
+      CommonActions.reset({
+        index: 0,
+        routes: [{name: 'Home'}],
+      }),
+    );
   }
 
   return (

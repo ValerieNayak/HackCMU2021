@@ -24,7 +24,7 @@ function PostMessage(msg) {
     .catch(error => console.error(error));
 }
 
-function AddToVault() {
+function AddToVault({user}) {
   const [inputText, setInputText] = useState('');
 
   function submitText() {
