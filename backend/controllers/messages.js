@@ -39,11 +39,11 @@ const getMessage = async (req, res) => {
 const getRandomMessage = async (req, res) => {
   const userid = req.params.userid;
   try {
-    const msg = await Message.aggregate([
+    const msgs = await Message.aggregate([
       {$match: {userid: userid}},
       {$sample: {size:1}}
     ])
-    res.status(200).json(msg);
+    res.status(200).json(msgs[0]);
   } catch(error) {
     res.status(404).json({message: error.message});
   }

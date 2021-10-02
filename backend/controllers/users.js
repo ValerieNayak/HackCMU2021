@@ -26,9 +26,15 @@ const getUser = async (req, res) => {
 
 const searchUsers = async (req, res) => {
   const username = req.params.username;
-  // try {
-  //   const users = await User.aggregate
-  // }
+  try {
+    const users = await User.aggregate([
+      {$match: {username: username}},
+      {$sample: {size: 1}},
+    ])
+    res.status(200).json(users[0]);
+  } catch(error) {
+    res.status(404).json({message: error.message});
+  }
 }
 
 const createUser = async (req, res) => {
