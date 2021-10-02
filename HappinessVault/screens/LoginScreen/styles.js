@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     // fontFamily: 'serif',
     fontWeight: 'bold',
     color: Colors.darkMagenta,
+    fontFamily: 'KohinoorBangla-Regular',
   },
 
   enterButton: {
@@ -38,6 +39,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: Colors.lightYellow,
+    fontFamily: 'KohinoorBangla-Regular',
   },
 
   input: {

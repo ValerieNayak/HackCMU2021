@@ -5,11 +5,13 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 
 AntDesign.loadFont();
 
-function PostMessage(msg) {
+async function PostMessage(msg) {
   msgBody = {
-    userid: 'val1234',
+    userid: '6157efde4405bc624b27aea0',
     message: msg,
+    sendername: 'valerie',
   };
+
   fetch('http://localhost:9000/messages/create', {
     method: 'POST',
     headers: {
@@ -27,19 +29,22 @@ function PostMessage(msg) {
 function AddToVault() {
   const [inputText, setInputText] = useState('');
 
-  function submitText() {
+  async function submitText() {
     console.log('submitted', inputText);
-    PostMessage(inputText);
+    await PostMessage(inputText);
   }
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Add to Vault</Text>
-      <TextInput
-        style={styles.input}
-        multiline={true}
-        onChangeText={text => setInputText(text)}
-      />
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.input}
+          multiline={true}
+          onChangeText={text => setInputText(text)}
+          placeholder={'Your message'}
+        />
+      </View>
       <TouchableOpacity onPress={submitText}>
         <AntDesign name="pluscircleo" size={30} color={'green'} />
       </TouchableOpacity>

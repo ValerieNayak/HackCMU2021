@@ -1,14 +1,33 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
+  // container: {
+  //   // justifyContent: 'center',
+  //   alignItems: 'center',
+  //   marginTop: 5,
+  // },
+
   container: {
-    // justifyContent: 'center',
+    // backgroundColor: Colors.lightYellow,
+    // width: '100%',
+    // height: '100%',
+    flex: 1,
     alignItems: 'center',
-    marginTop: 5,
+    justifyContent: 'center',
   },
 
   title: {
-    fontSize: 25,
+    marginTop: 80,
+    fontSize: 35,
+    alignSelf: 'center',
+    fontFamily: 'KohinoorBangla-Regular',
+  },
+
+  image: {
+    // flex: 1,
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
   },
 });
 

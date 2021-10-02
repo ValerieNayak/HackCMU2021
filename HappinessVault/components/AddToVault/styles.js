@@ -9,14 +9,29 @@ const styles = StyleSheet.create({
 
   title: {
     fontSize: 20,
+    marginTop: 10,
+    fontFamily: 'KohinoorBangla-Regular',
+  },
+
+  inputContainer: {
+    height: '80%',
+    margin: 12,
+    borderWidth: 0,
+    padding: 10,
+    backgroundColor: 'white',
+    opacity: 0.7,
+    borderRadius: 15,
   },
 
   input: {
-    height: '80%',
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
-    fontSize: 18,
+    // height: '80%',
+    // margin: 12,
+    // borderWidth: 0,
+    // padding: 10,
+    fontSize: 20,
+    height: '100%',
+    width: '100%',
+    fontFamily: 'KohinoorBangla-Regular',
   },
 });
 

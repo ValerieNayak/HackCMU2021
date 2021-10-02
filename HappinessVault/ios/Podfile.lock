@@ -339,8 +339,8 @@ PODS:
     - React-jsi (= 0.66.0)
     - React-logger (= 0.66.0)
     - React-perflogger (= 0.66.0)
-  - RNCMaskedView (0.2.6):
-    - React-Core
+  - RNCMaskedView (0.1.11):
+    - React
   - RNGestureHandler (1.10.3):
     - React-Core
   - RNScreens (3.8.0):
@@ -406,7 +406,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
-  - "RNCMaskedView (from `../node_modules/@react-native-masked-view/masked-view`)"
+  - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
@@ -491,7 +491,7 @@ EXTERNAL SOURCES:
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
   RNCMaskedView:
-    :path: "../node_modules/@react-native-masked-view/masked-view"
+    :path: "../node_modules/@react-native-community/masked-view"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNScreens:
@@ -545,7 +545,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: 53b92d54b923283638cb0186da7a5c2d2b70a49b
   React-runtimeexecutor: 4bb657a97aa74568d9ed634c8bd478299bb8a3a6
   ReactCommon: eb059748e842a1a86025ebbd4ac9d99e74492f88
-  RNCMaskedView: d367b2a8df3992114e31b32b091a0c00dc800827
+  RNCMaskedView: f127cd9652acfa31b91dcff613e07ba18b774db6
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNScreens: 6e1ea5787989f92b0671049b808aef64fa1ef98c
   RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4

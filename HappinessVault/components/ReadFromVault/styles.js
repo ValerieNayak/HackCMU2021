@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -6,16 +7,19 @@ const styles = StyleSheet.create({
     height: '40%',
     margin: 5,
     alignItems: 'center',
+    marginTop: 30,
   },
 
   title: {
     fontSize: 20,
+    color: 'white',
+    fontFamily: 'KohinoorBangla-Regular',
   },
 
   button: {
     height: 35,
     width: '55%',
-    backgroundColor: '#BBADF5',
+    backgroundColor: Colors.indigo,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 10,
@@ -27,6 +31,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     fontSize: 18,
+    fontFamily: 'KohinoorBangla-Regular',
   },
 
   messageBox: {
@@ -37,10 +42,12 @@ const styles = StyleSheet.create({
     margin: 20,
     alignItems: 'center',
     justifyContent: 'space-evenly',
+    opacity: 0.6,
   },
 
   messageText: {
     fontSize: 18,
+    fontFamily: 'KohinoorBangla-Regular',
   },
 });
 

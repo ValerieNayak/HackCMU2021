@@ -40,12 +40,12 @@ function LoginScreen({navigation, route}) {
     navigation.dispatch(
       CommonActions.reset({
         index: 0,
-        routes: [{name: 'Home'}],
+        routes: [{name: 'Tabs'}],
       }),
     );
   }
 
-  const background = require('../../assets/images/background1.jpg');
+  const background = require('../../assets/images/login-bg.jpg');
 
   return (
     <View style={styles.container}>
