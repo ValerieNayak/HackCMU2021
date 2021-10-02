@@ -14,8 +14,19 @@ const getAllMessages = async (req, res) => {
   }
 }
 
+const getUserMessages = async (req, res) => {
+  try {
+    const messages = await Message.aggregate([
+      {$match: {userid: req.body.userid}}
+    ])
+    res.status(200).json(messages);
+  } catch(error) {
+    res.status(404).json({message: error.message});
+  }
+}
+
 const getMessage = async (req, res) => {
-  const _id = req.params._id;
+  const _id = req.body._id;
   try {
     const msg = await Message.findOne({_id: _id});
     res.status(200).json(msg);
@@ -71,12 +82,20 @@ const updateMessage = async (req, res) => {
   }
 }
 
-//TODO: add delete function
-//TODO: add get messages by username function
-//TODO: add random select function
+const deleteMessage = async (req, res) => {
+  const _id = req.body._id;
+  try {
+    await Message.findOneAndRemove({_id: _id});
+    res.status(203).json({_id: _id});
+  } catch(error) {
+    res.status(404).json({message: error.message});
+  }
+}
 
 module.exports.getAllMessages = getAllMessages;
+module.exports.getUserMessages = getUserMessages;
 module.exports.getMessage = getMessage;
 module.exports.getRandomMessage = getRandomMessage;
 module.exports.createMessage = createMessage;
 module.exports.updateMessage = updateMessage;
+module.exports.deleteMessage = deleteMessage;
