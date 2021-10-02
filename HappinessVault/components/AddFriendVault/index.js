@@ -13,6 +13,7 @@ async function PostMessage(msg) {
     userid: '6157efde4405bc624b27aea0',
     message: msg,
     sendername: 'valerie',
+    senderId: '6158d2ba7253b5224bcd1452',
   };
 
   fetch('http://localhost:9000/messages/create', {

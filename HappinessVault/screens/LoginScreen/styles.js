@@ -22,35 +22,44 @@ const styles = StyleSheet.create({
     fontSize: 20,
     // fontFamily: 'serif',
     fontWeight: 'bold',
-    color: Colors.darkMagenta,
+    color: Colors.loginBlue,
+    alignSelf: 'center',
     fontFamily: 'KohinoorBangla-Regular',
   },
 
   enterButton: {
-    backgroundColor: Colors.darkMagenta,
+    backgroundColor: Colors.loginBlue,
     height: 35,
     width: 60,
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
+    alignSelf: 'center',
   },
 
   enterText: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: Colors.lightYellow,
+    color: 'white',
     fontFamily: 'KohinoorBangla-Regular',
   },
 
   input: {
+    fontSize: 18,
+    borderRadius: 0,
+    alignSelf: 'center',
+    fontFamily: 'KohinoorBangla-Regular',
+  },
+
+  inputContainer: {
     height: 50,
     margin: 12,
-    borderWidth: 3,
     padding: 10,
-    fontSize: 18,
     width: '80%',
+    backgroundColor: 'white',
+    opacity: 0.6,
     borderRadius: 10,
-    borderColor: Colors.darkMagenta,
+    alignSelf: 'center',
   },
 });
 

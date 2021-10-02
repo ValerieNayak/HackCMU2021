@@ -54,9 +54,15 @@ function LoginScreen({navigation, route}) {
         source={background}
         resizeMode="cover">
         <Text style={styles.greetingText}>Hi! What's your name?</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={text => setName(text)}></TextInput>
+
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.input}
+            onChangeText={text => setName(text)}
+            placeholder={'name'}
+          />
+        </View>
+
         <TouchableOpacity onPress={submitName}>
           <View style={styles.enterButton}>
             <Text style={styles.enterText}>Enter</Text>
