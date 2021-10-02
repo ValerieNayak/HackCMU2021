@@ -15,9 +15,9 @@ const getAllMessages = async (req, res) => {
 }
 
 const getMessage = async (req, res) => {
-  const id = req.params.id;
+  const _id = req.params._id;
   try {
-    const msg = await Message.findOne({id: id});
+    const msg = await Message.findOne({_id: _id});
     res.status(200).json(msg);
   } catch(error) {
     res.status(404).json({message: error.message});
@@ -27,7 +27,6 @@ const getMessage = async (req, res) => {
 const createMessage = async (req, res) => {
   console.log(req.body);
   const newMessage = new Message({
-    id: req.body.id,
     username: req.body.username,
     message: req.body.message,
   })
@@ -39,8 +38,30 @@ const createMessage = async (req, res) => {
   }
 }
 
+const updateMessage = async (req, res) => {
+  const _id = req.body._id;
+  try {
+    await Message.findOneAndUpdate(
+      {
+        _id: _id
+      },
+      {
+        username: req.body.username,
+        message: req.body.message
+      });
+    res.status(202).json({_id: _id});
+
+  } catch(error) {
+    res.status(401).json({message: error.message});
+  }
+}
+
+
 //TODO: add update and delete functions
+//TODO: add get messages by username function
+//TODO: add random select function
 
 module.exports.getAllMessages = getAllMessages;
 module.exports.getMessage = getMessage;
 module.exports.createMessage = createMessage;
+module.exports.updateMessage = updateMessage;
