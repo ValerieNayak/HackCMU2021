@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get('/', user_Act.getAllUsers);
 router.get('/id', user_Act.getUser);
-router.post('/create', user_Act.createUser)
+router.get('/search', user_Act.searchUsers);
+router.post('/create', user_Act.createUser);
 
 module.exports = router

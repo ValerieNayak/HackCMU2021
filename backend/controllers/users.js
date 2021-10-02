@@ -24,6 +24,13 @@ const getUser = async (req, res) => {
   }
 }
 
+const searchUsers = async (req, res) => {
+  const username = req.body.username;
+  // try {
+  //   const users = await User.aggregate
+  // }
+}
+
 const createUser = async (req, res) => {
   console.log(req.body);
   const newUser = new User({
@@ -39,4 +46,5 @@ const createUser = async (req, res) => {
 
 module.exports.getAllUsers = getAllUsers;
 module.exports.getUser = getUser;
+module.exports.searchUsers = searchUsers;
 module.exports.createUser = createUser;
