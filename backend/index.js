@@ -17,7 +17,9 @@ try{
 }
 
 const messageRouter = require('./routes/messages');
+const userRouter = require('./routes/users');
 app.use('/messages', messageRouter);
+app.use('/users', userRouter);
 
 const port=9000;
 app.listen(port, () =>{
