@@ -24,10 +24,25 @@ const getMessage = async (req, res) => {
   }
 }
 
+const getRandomMessage = async (req, res) => {
+  const count = Message.estimatedDocumentCount();
+  var random = Math.floor(Math.random() * count);
+  try {
+    const msg = await Message.aggregate([
+      {$match: {userid: req.body.userid}},
+      {$sample: {size:1}}
+    ])
+    res.status(200).json(msg);
+  } catch(error) {
+    res.status(404).json({message: error.message});
+  }
+  
+}
+
 const createMessage = async (req, res) => {
   console.log(req.body);
   const newMessage = new Message({
-    username: req.body.username,
+    userid: req.body.userid,
     message: req.body.message,
   })
   try {
@@ -46,7 +61,7 @@ const updateMessage = async (req, res) => {
         _id: _id
       },
       {
-        username: req.body.username,
+        userid: req.body.userid,
         message: req.body.message
       });
     res.status(202).json({_id: _id});
@@ -56,12 +71,12 @@ const updateMessage = async (req, res) => {
   }
 }
 
-
-//TODO: add update and delete functions
+//TODO: add delete function
 //TODO: add get messages by username function
 //TODO: add random select function
 
 module.exports.getAllMessages = getAllMessages;
 module.exports.getMessage = getMessage;
+module.exports.getRandomMessage = getRandomMessage;
 module.exports.createMessage = createMessage;
 module.exports.updateMessage = updateMessage;
