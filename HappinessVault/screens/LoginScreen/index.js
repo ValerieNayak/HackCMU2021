@@ -1,5 +1,11 @@
 import React, {useState, useContext} from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  ImageBackground,
+} from 'react-native';
 import styles from './styles';
 import {StackActions, CommonActions} from '@react-navigation/native';
 
@@ -24,7 +30,6 @@ function LoginScreen({navigation, route}) {
       .then(response => response.json())
       .then(json => {
         console.log(json);
-        updateUser(json);
       })
       .catch(error => console.error(error));
   }
@@ -40,17 +45,24 @@ function LoginScreen({navigation, route}) {
     );
   }
 
+  const background = require('../../assets/images/background1.jpg');
+
   return (
     <View style={styles.container}>
-      <Text style={styles.greetingText}>Hi! What's your name?</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={text => setName(text)}></TextInput>
-      <TouchableOpacity onPress={submitName}>
-        <View style={styles.enterButton}>
-          <Text style={styles.enterText}>Enter</Text>
-        </View>
-      </TouchableOpacity>
+      <ImageBackground
+        style={styles.image}
+        source={background}
+        resizeMode="cover">
+        <Text style={styles.greetingText}>Hi! What's your name?</Text>
+        <TextInput
+          style={styles.input}
+          onChangeText={text => setName(text)}></TextInput>
+        <TouchableOpacity onPress={submitName}>
+          <View style={styles.enterButton}>
+            <Text style={styles.enterText}>Enter</Text>
+          </View>
+        </TouchableOpacity>
+      </ImageBackground>
     </View>
   );
 }

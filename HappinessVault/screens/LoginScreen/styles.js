@@ -3,10 +3,18 @@ import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.lightYellow,
+    // backgroundColor: Colors.lightYellow,
+    // width: '100%',
+    // height: '100%',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  image: {
+    // flex: 1,
     width: '100%',
     height: '100%',
-    alignItems: 'center',
     justifyContent: 'center',
   },
 

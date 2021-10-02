@@ -31,9 +31,13 @@ const App: () => Node = () => {
   const [user, updateUser] = useState({});
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: Colors.lightYellow}}>
-      <MainStack user={user} updateUser={updateUser} />
-    </SafeAreaView>
+    // <SafeAreaView style={{flex: 1, backgroundColor: Colors.lightYellow}}>
+    //   <MainStack />
+    // </SafeAreaView>
+
+    <View style={{flex: 1}}>
+      <MainStack />
+    </View>
   );
 };
 
